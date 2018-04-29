@@ -17,3 +17,5 @@ TEST DESIGN
 
 MAQUINA DE ESTADOS SIMPLES:
 
+![StateMachine](https://github.com/PedroMiguelSilva/Nite/blob/master/FInal.png)
+
