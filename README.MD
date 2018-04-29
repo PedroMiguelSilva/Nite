@@ -19,3 +19,6 @@ MAQUINA DE ESTADOS SIMPLES:
 
 ![StateMachine](https://github.com/PedroMiguelSilva/Nite/blob/master/FInal.png)
 
+UML:
+![UML](https://github.com/PedroMiguelSilva/Nite/blob/master/UMl.png)
+
