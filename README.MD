@@ -14,3 +14,6 @@ TEST DESIGN
 - Criaçâo de eventos/discotecas já existentes não é válido
 - Criação de novos elementos com valores válidos não entra em colisão com dados já existentes (geração de id's únicos automaticamente)
 
+
+MAQUINA DE ESTADOS SIMPLES:
+
