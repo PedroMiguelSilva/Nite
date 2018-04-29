@@ -1,3 +1,8 @@
+ARCHITECTURE DESIGN
+
+Design Patterns:
+  Numa altura inicial do projeto previmos a ulilização de um singleton para a comunicação de objetos json entre o servidor e o utilizador. Esta previsão foi feita com base num modelo de Rest Api em php, no entanto, optámos por fazê-lo em java pelo que este DP ainda está questionável (pela falta de experiência no tema). 
+
 
 TEST DESIGN
 
@@ -8,3 +13,4 @@ TEST DESIGN
 - Sign up de contas já existentes não é válido
 - Criaçâo de eventos/discotecas já existentes não é válido
 - Criação de novos elementos com valores válidos não entra em colisão com dados já existentes (geração de id's únicos automaticamente)
+
