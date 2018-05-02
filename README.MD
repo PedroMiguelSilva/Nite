@@ -16,9 +16,11 @@ TEST DESIGN
 
 
 MAQUINA DE ESTADOS SIMPLES:
+![Upgrade](https://github.com/PedroMiguelSilva/Nite/blob/master/upgrade.png)
 
-![StateMachine1](https://github.com/PedroMiguelSilva/Nite/blob/master/FInal.png)
 
 UML:
 ![UML](https://github.com/PedroMiguelSilva/Nite/blob/master/UMl.png)
 
+
+![StateMachine1](https://github.com/PedroMiguelSilva/Nite/blob/master/FInal.png)
