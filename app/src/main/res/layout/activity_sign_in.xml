@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".SignIn">
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="121dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Password"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerInParent="true"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="151dp"
+        android:layout_height="158dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/slo"
+        android:layout_width="198dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/slogan"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/email1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="211dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Email"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <Button
+
+        android:id="@+id/btnSignIn"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:layout_weight="1"
+        android:shadowColor="@android:color/black"
+        android:text="SignUp"
+        android:textColor="@android:color/white"/>
+       <!-- app:buttonColor="@color/fbutton_color_pumpkin"
+        app:cornerRadius="4dp"
+        app:shadowEnabled="true"
+        app:shadowHeight="5dp" /> -->
+
+
+
+</RelativeLayout>

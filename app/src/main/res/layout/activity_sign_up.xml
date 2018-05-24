@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".SignUp">
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Password"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/telemovel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="215dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Telemovel"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/email1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Email"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="157dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Age"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerInParent="true"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="115dp"
+        android:layout_height="75dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/slo"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:gravity="center"
+        android:text="@string/slogan"
+        android:textColor="@android:color/white" />
+
+    <EditText
+        android:id="@+id/name1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="203dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <Button
+
+        android:id="@+id/btnSignUp"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:layout_weight="1"
+        android:shadowColor="@android:color/black"
+        android:text="SignUp"
+        android:textColor="@android:color/white"/>
+       <!-- app:buttonColor="@color/fbutton_color_pumpkin"
+        app:cornerRadius="4dp"
+        app:shadowEnabled="true"
+        app:shadowHeight="5dp" /> -->
+
+
+
+</RelativeLayout>
