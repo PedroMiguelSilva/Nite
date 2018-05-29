@@ -28,6 +28,11 @@ public class MenuViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
         itemView.setOnClickListener(this);
     }
+
+    public void setItemClickListener(ItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
+
     @Override
     public void onClick(View view) {
         itemClickListener.onClick(view,getAdapterPosition(), false);

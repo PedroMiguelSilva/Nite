@@ -15,13 +15,52 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.miguelmoura.nite_nightapp.Interface.ItemClickListener;
+import com.example.miguelmoura.nite_nightapp.Model.Category;
+import com.example.miguelmoura.nite_nightapp.Session.Session;
+import com.example.miguelmoura.nite_nightapp.ViewHolder.MenuViewHolder;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    FirebaseDatabase database;
+    DatabaseReference category;
+
+    TextView txtFullName;
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+
+    private void loadMenu() {
+
+        FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
+            @Override
+            protected void populateViewHolder(MenuViewHolder viewHolder, Category model, int position) {
+                viewHolder.txtMenuName.setText(model.getName());
+                Picasso.with(getBaseContext()).load(model.getImage())
+                        .into(viewHolder.imageView);
+                final Category clickItem = model;
+                viewHolder.setItemClickListener(new ItemClickListener() {
+                    @Override
+                    public void onClick(View view, int position, boolean isLongClick) {
+                        Toast.makeText(Home.this, ""+clickItem.getName(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        };
+
+        recyclerView.setAdapter(adapter);
+        Intent genreList = new Intent(Home.this, GenreList.class);
+        //Aqui tem de ir buscar o Id do genero de noite, que deve ser a Key para depois abrir os eventos
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +70,10 @@ public class Home extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Menu");
         setSupportActionBar(toolbar);
+
+        //init firebase
+        database = FirebaseDatabase.getInstance();
+        category = database.getReference("Category");
 
 
 
@@ -43,23 +86,21 @@ public class Home extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
+        //set name for user
+        View headerView = navigationView.getHeaderView(0);
+        txtFullName = (TextView)headerView.findViewById(R.id.txtFullName);
+        txtFullName.setText(Session.currentUser.getUserName());
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
         loadMenu();
     }
 
     // SILVA IMPORTANTE AQUI ->
 
-    private void loadMenu() {
-        //método onde carregas da base de dados as categorias
 
-        Intent genreList = new Intent(Home.this, GenreList.class);
-        //Aqui tem de ir buscar o Id do genero de noite, que deve ser a Key para depois abrir os eventos
-
-    }
 
     @Override
     public void onBackPressed() {
@@ -86,9 +127,9 @@ public class Home extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        //if (id == R.id.action_settings) {
+        //    return true;
+        //}
 
         return super.onOptionsItemSelected(item);
     }

@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "106078562247",
+    "firebase_url": "https://nite-lpoo.firebaseio.com",
+    "project_id": "nite-lpoo",
+    "storage_bucket": "nite-lpoo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106078562247:android:c1dd76d49843b283",
+        "android_client_info": {
+          "package_name": "com.example.miguelmoura.nite_nightapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106078562247-hhv7eseqttfu87bls99n07s08gi8rpe0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.miguelmoura.nite_nightapp",
+            "certificate_hash": "97f11bc6df290dcd5f7732adba35286b5a7b0cb7"
+          }
+        },
+        {
+          "client_id": "106078562247-so64p2gr8cet75fe4fmd2c1ir13asuie.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "106078562247-so64p2gr8cet75fe4fmd2c1ir13asuie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBudp9Az_Mp8k6fbTA91dMaJ_unJNV3Pr4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106078562247-so64p2gr8cet75fe4fmd2c1ir13asuie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
