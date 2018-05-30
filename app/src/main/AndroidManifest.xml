@@ -23,6 +23,24 @@
             android:name=".SignUp"
             android:label="SignUp" />
         <activity
+            android:name=".MyProfile"
+            android:label="MyProfile" />
+        <activity
+            android:name=".Settings"
+            android:label="Settings" />
+        <activity
+            android:name=".Historic"
+            android:label="Historic" />
+        <activity
+            android:name=".Favs"
+            android:label="Favs" />
+        <activity
+            android:name=".EditProfile"
+            android:label="EditProfile" />
+        <activity
+            android:name=".Help"
+            android:label="Help" />
+        <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme"

@@ -1,4 +1,6 @@
 package com.example.miguelmoura.nite_nightapp;
 
-public class Favs {
+import android.app.Activity;
+
+public class Favs extends Activity{
 }

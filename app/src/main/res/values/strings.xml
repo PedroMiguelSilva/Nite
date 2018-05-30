@@ -11,6 +11,16 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="Help">Sobre a Nite: The Night App:\n\n
+    Agora sabes onde ir.\n \n
+
+    De certeza que ja te aconteceu estares a planear com os teus amigos a vossa noite épica mas quando chega á hora da verdade, não sabem onde ir
+    nem que festas vão haver! \n\n A noite que ia ser épica, torna-se um fiasco. Mas agora não!\n\n
+    Com a Nite escolhes que tipo de festa pretendes, desde um café tranquilo ao som de Jazz, a uma noitada nos melhores clubes da cidade.\n
+    A Nite reconhece a tua posição e diz te tudo o que vai acontecer. È só abrires o evento e reservares o teu lugar.\n\n
+
+    Sim ás grandes noites!\n\n
+    Agora ja sabes onde ir.</string>
 
 
 </resources>

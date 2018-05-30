@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/password1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@color/overlay_background"
+        android:text="Password:"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnEditPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEditEmail" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="459dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@color/overlay_background"
+        android:text="Email:"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <TextView
+        android:id="@+id/password2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@color/overlay_background"
+        android:text="Confirme a Password"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password1" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginStart="1dp"
+        android:background="@color/overlay_background"
+        android:text="Username:"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnEditEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="106dp"
+        android:layout_marginBottom="57dp"
+        android:layout_marginTop="54dp"
+        android:background="@color/overlay_background"
+        android:text="Descrição"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/editphoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnEditPassword" />
+
+    <TextView
+        android:id="@+id/editphoto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/overlay_background"
+        android:text="Foto:"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/face"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnEditPhoto" />
+
+    <ImageView
+        android:id="@+id/face"
+        android:layout_width="157dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEditPhoto"
+        app:srcCompat="@drawable/face" />
+
+    <Button
+        android:id="@+id/btnEditEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:background="@color/overlay_background"
+        android:text="Edit"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/password1"
+        app:layout_constraintEnd_toEndOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <Button
+        android:id="@+id/btnEditPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:background="@color/overlay_background"
+        android:text="Edit"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnEditDes"
+        app:layout_constraintEnd_toEndOf="@+id/password1"
+        app:layout_constraintTop_toBottomOf="@+id/password1" />
+
+    <Button
+        android:id="@+id/btnEditDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="2dp"
+        android:background="@color/overlay_background"
+        android:text="Edit"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnEditPhoto"
+        app:layout_constraintEnd_toEndOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/btnEditPassword" />
+
+    <Button
+        android:id="@+id/btnEditPhoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="9dp"
+        android:layout_marginEnd="2dp"
+        android:background="@color/overlay_background"
+        android:text="Edit"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/face"
+        app:layout_constraintEnd_toEndOf="@+id/description"
+        app:layout_constraintTop_toBottomOf="@+id/btnEditDes" />
+
+    <Button
+        android:id="@+id/btnEditUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:background="@color/overlay_background"
+        android:textColor="@android:color/white"
+        android:text="Edit"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="@+id/username"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>
