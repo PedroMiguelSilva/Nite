@@ -2,6 +2,7 @@ package com.example.miguelmoura.nite_nightapp;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.miguelmoura.nite_nightapp.Model.User;
+import com.example.miguelmoura.nite_nightapp.Session.Session;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,18 +27,18 @@ import com.google.firebase.database.ValueEventListener;
             setContentView(R.layout.activity_sign_up);
 
             /* Initialize the Fields */
-            userName = (EditText)findViewById(R.id.name1);
-            email = (EditText)findViewById(R.id.email1);
-            password = (EditText)findViewById(R.id.password);
-            phoneNumber = (EditText)findViewById(R.id.telemovel);
-            birthYear = (EditText)findViewById(R.id.age);
-            btnSignUp = (Button) findViewById(R.id.btnSignUp);
+            userName    = findViewById(R.id.name1);
+            email       = findViewById(R.id.email1);
+            password    = findViewById(R.id.password);
+            phoneNumber = findViewById(R.id.telemovel);
+            birthYear   = findViewById(R.id.age);
+            btnSignUp   = findViewById(R.id.btnSignUp);
 
             /* Start connection with data base */
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             final DatabaseReference table_user = database.getReference("User");
 
-            /* Button funcionality */
+            /* Button functionality */
             btnSignUp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -58,6 +60,10 @@ import com.google.firebase.database.ValueEventListener;
                                 User user = new User(userName.getText().toString(), email.getText().toString(), phoneNumber.getText().toString(), birthYear.getText().toString(), password.getText().toString());
                                 table_user.child(userName.getText().toString()).setValue(user);
                                 Toast.makeText(SignUp.this,"login successful", Toast.LENGTH_SHORT).show();
+                                Intent homeIntent = new Intent(SignUp.this,Home.class);
+                                Session.currentUser = user;
+                                startActivity(homeIntent);
+                                finish();
                             }
                         }
 

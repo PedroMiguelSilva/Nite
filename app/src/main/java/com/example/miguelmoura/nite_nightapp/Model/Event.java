@@ -1,16 +1,25 @@
 package com.example.miguelmoura.nite_nightapp.Model;
 
 public class Event {
-    private String name, image, description, menuId;
 
-    public Event(String name, String image, String description, String menuId) {
+    private String name;
+    private String image;
+    private String description;
+    private String categoryId;
+    private String clubId;
+    private String contact;
+
+    public Event(String name, String image, String description, String categoryId, String clubId, String contact) {
         this.name = name;
         this.image = image;
         this.description = description;
-        this.menuId = menuId;
+        this.categoryId = categoryId;
+        this.clubId = clubId;
+        this.contact = contact;
     }
 
     public Event() {
+
     }
 
     public String getName() {
@@ -37,11 +46,27 @@ public class Event {
         this.description = description;
     }
 
-    public String getMenuId() {
-        return menuId;
+    public String getCategoryId() {
+        return categoryId;
     }
 
-    public void setMenuId(String menuId) {
-        this.menuId = menuId;
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getClubId() {
+        return clubId;
+    }
+
+    public void setClubId(String clubId) {
+        this.clubId = clubId;
+    }
+
+    public String getContact() {
+        return contact;
+    }
+
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 }

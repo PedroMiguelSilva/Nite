@@ -29,9 +29,9 @@ public class SignIn extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        userName = (EditText) findViewById(R.id.email1);
-        password = (EditText) findViewById(R.id.password);
-        btnSignIn = (Button) findViewById(R.id.btnSignIn);
+        userName = findViewById(R.id.email1);
+        password = findViewById(R.id.password);
+        btnSignIn = findViewById(R.id.btnSignIn);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference table_user = database.getReference("User");
@@ -67,7 +67,6 @@ public class SignIn extends Activity {
                         Toast.makeText(SignIn.this, "User not exist", Toast.LENGTH_SHORT).show();
                     }
                 }
-
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
                     mDialog.dismiss();
