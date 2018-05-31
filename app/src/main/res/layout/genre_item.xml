@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
-    app:cardElevation="4dp"
-    android:layout_marginBottom="8dp"
+    android:layout_height="150dp"
+    app:cardElevation="4dp">
+    <!--android:layout_marginBottom="8dp"-->
 
-    >
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
 
 
         <ImageView
-
+            android:contentDescription="@string/desc"
             android:background="@drawable/background"
             android:scaleType="centerCrop"
             android:id="@+id/genre_image"
@@ -24,13 +24,12 @@
             />
         <TextView
             android:id="@+id/genre_name"
-            android:text="Bar Genre"
+            android:text="@string/barGenre"
             android:textColor="@android:color/white"
             android:background="@color/overlay_background"
             android:textSize="20sp"
             android:gravity="center"
             android:layout_alignParentBottom="true"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 

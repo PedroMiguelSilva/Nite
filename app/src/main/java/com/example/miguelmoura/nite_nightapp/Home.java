@@ -38,9 +38,11 @@ public class Home extends AppCompatActivity
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
+    FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter;
+
     private void loadMenu() {
 
-        FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
+        adapter = new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
             @Override
             protected void populateViewHolder(MenuViewHolder viewHolder, Category model, int position) {
                 viewHolder.txtMenuName.setText(model.getName());
@@ -51,6 +53,12 @@ public class Home extends AppCompatActivity
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
                         Toast.makeText(Home.this, ""+clickItem.getName(), Toast.LENGTH_SHORT).show();
+
+                        //get category id
+                        Intent eventList = new Intent(Home.this,GenreList.class);
+
+                        eventList.putExtra("categoryId",adapter.getRef(position).getKey());
+                        startActivity(eventList);
                     }
                 });
             }

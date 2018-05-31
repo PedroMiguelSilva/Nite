@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
         private Button btnSignUp;
 
         /* Start connection with data base */
-        private final String TABLE_USER_NAME        = "User";
+        private final String TABLE_USER_NAME    = "User";
         private final String TABLE_EMAIL_NAME   = "Email";
 
         private FirebaseDatabase database               = FirebaseDatabase.getInstance();

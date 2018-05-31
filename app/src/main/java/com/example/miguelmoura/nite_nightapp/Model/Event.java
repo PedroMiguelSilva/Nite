@@ -2,71 +2,77 @@ package com.example.miguelmoura.nite_nightapp.Model;
 
 public class Event {
 
-    private String name;
-    private String image;
-    private String description;
     private String categoryId;
     private String clubId;
     private String contact;
+    private String day;
+    private String description;
+    private String endHour;
+    private String image;
+    private String month;
+    private String name;
+    private String startHour;
+    private String year;
 
-    public Event(String name, String image, String description, String categoryId, String clubId, String contact) {
-        this.name = name;
-        this.image = image;
-        this.description = description;
+    public Event() {
+    }
+
+    public Event(String categoryId, String clubId, String contact, String day, String description, String endHour, String image, String month, String name, String startHour, String year) {
         this.categoryId = categoryId;
         this.clubId = clubId;
         this.contact = contact;
-    }
-
-    public Event() {
-
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
+        this.day = day;
         this.description = description;
+        this.endHour = endHour;
+
+        this.image = image;
+        this.month = month;
+        this.name = name;
+        this.startHour = startHour;
+        this.year = year;
     }
 
     public String getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
-    }
-
     public String getClubId() {
         return clubId;
-    }
-
-    public void setClubId(String clubId) {
-        this.clubId = clubId;
     }
 
     public String getContact() {
         return contact;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public String getDay() {
+        return day;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getEndHour() {
+        return endHour;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getStartHour() {
+        return startHour;
+    }
+
+    public String getYear() {
+        return year;
     }
 }

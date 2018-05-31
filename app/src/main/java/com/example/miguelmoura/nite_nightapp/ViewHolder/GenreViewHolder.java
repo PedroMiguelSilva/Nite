@@ -15,14 +15,15 @@ public class GenreViewHolder extends RecyclerView.ViewHolder implements View.OnC
     public ImageView imageView;
     private ItemClickListener itemClickListener;
 
-
-
+    public void setItemClickListener(ItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
 
     public GenreViewHolder(View itemView) {
         super(itemView);
 
-        txtGenreName = (TextView) itemView.findViewById(R.id.genre_name);
-        imageView= (ImageView) itemView.findViewById(R.id.menu_image);
+        txtGenreName = itemView.findViewById(R.id.genre_name);
+        imageView =  itemView.findViewById(R.id.genre_image);
 
         itemView.setOnClickListener(this);
 
