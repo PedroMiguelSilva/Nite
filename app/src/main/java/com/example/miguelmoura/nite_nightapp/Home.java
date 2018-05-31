@@ -57,9 +57,9 @@ public class Home extends AppCompatActivity
         };
 
         recyclerView.setAdapter(adapter);
-        Intent genreList = new Intent(Home.this, GenreList.class);
-        //Aqui tem de ir buscar o Id do genero de noite, que deve ser a Key para depois abrir os eventos
 
+        /* TODO Adicionar o id escolhido à intent para poder saber que eventos carregar na proxima pagina*/
+        Intent genreList = new Intent(Home.this, GenreList.class);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class Home extends AppCompatActivity
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Menu");
         setSupportActionBar(toolbar);
 
@@ -77,22 +77,26 @@ public class Home extends AppCompatActivity
 
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         //set name for user
         View headerView = navigationView.getHeaderView(0);
-        txtFullName = (TextView)headerView.findViewById(R.id.txtFullName);
+        txtFullName = headerView.findViewById(R.id.txtFullName);
         txtFullName.setText(Session.currentUser.getUserName());
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_menu);
+        recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);
+        recyclerView.setItemViewCacheSize(5);
+        recyclerView.setDrawingCacheEnabled(true);
+        recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
+
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         loadMenu();
@@ -104,7 +108,7 @@ public class Home extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -163,7 +167,7 @@ public class Home extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

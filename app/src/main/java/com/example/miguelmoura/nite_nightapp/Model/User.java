@@ -62,6 +62,15 @@ public class User {
     }
 
     /**
+     * Constructor with only E-mail.
+     * @param email
+     *          Email of the User
+     */
+    public User(String email) {
+        this.email = email;
+    }
+
+    /**
      * Returns the user name of the User
      * @return UserName of the User
      */
@@ -99,5 +108,13 @@ public class User {
      */
     public String getPassword() {
         return password;
+    }
+
+    public void formatEmail(){
+        this.email = email.replace(".","TERMINATIONDOT");
+    }
+
+    public void unformatEmail(){
+        this.email = email.replace("TERMINATIONDOT",".");
     }
 }

@@ -18,8 +18,34 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
     public class SignUp extends Activity {
-        EditText email, userName, password, phoneNumber, birthYear;
-        Button btnSignUp;
+        private EditText email, userName, password, phoneNumber, birthYear;
+        private Button btnSignUp;
+
+        /* Start connection with data base */
+        private final String TABLE_USER_NAME        = "User";
+        private final String TABLE_EMAIL_NAME   = "Email";
+
+        private FirebaseDatabase database               = FirebaseDatabase.getInstance();
+        private final DatabaseReference table_user      = database.getReference(TABLE_USER_NAME);
+        private final DatabaseReference table_email = database.getReference(TABLE_EMAIL_NAME);
+
+        private boolean isEmailUnique = false;
+
+        private void updateEmailUnique(){
+            table_email.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if(!dataSnapshot.child(email.getText().toString()).exists()){
+                        isEmailUnique = true;
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                    isEmailUnique = false;
+                }
+            });
+        }
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -34,36 +60,43 @@ import com.google.firebase.database.ValueEventListener;
             birthYear   = findViewById(R.id.age);
             btnSignUp   = findViewById(R.id.btnSignUp);
 
-            /* Start connection with data base */
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            final DatabaseReference table_user = database.getReference("User");
-
             /* Button functionality */
             btnSignUp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+
                     /* Waiting message */
                     final ProgressDialog mDialog = new ProgressDialog(SignUp.this);
                     mDialog.setMessage("Please wait");
                     mDialog.show();
 
-                    /* Comunication with the data base */
+                    /* Communication with the data base */
                     table_user.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
+                            User user = new User(userName.getText().toString(), email.getText().toString(), phoneNumber.getText().toString(), birthYear.getText().toString(), password.getText().toString());
+                            user.formatEmail();
+                            updateEmailUnique();
+
                             /* Already exists a user */
-                            if(dataSnapshot.child(userName.getText().toString()).exists()){
+                            if(dataSnapshot.child(user.getUserName()).exists()){
+                                Toast.makeText(SignUp.this,"Username already in use", Toast.LENGTH_SHORT).show();
                                 mDialog.dismiss();
                             }
-                            else {
+                            /* Check if email is unique */
+                            else if(isEmailUnique){
                                 mDialog.dismiss();
-                                User user = new User(userName.getText().toString(), email.getText().toString(), phoneNumber.getText().toString(), birthYear.getText().toString(), password.getText().toString());
-                                table_user.child(userName.getText().toString()).setValue(user);
-                                Toast.makeText(SignUp.this,"login successful", Toast.LENGTH_SHORT).show();
+
+                                table_user.child(user.getUserName()).setValue(user);
+                                table_email.child(user.getEmail()).setValue(new User(user.getUserName()));
                                 Intent homeIntent = new Intent(SignUp.this,Home.class);
                                 Session.currentUser = user;
                                 startActivity(homeIntent);
                                 finish();
+                            }
+                            else{
+                                mDialog.dismiss();
+                                Toast.makeText(SignUp.this,"Email already in use", Toast.LENGTH_SHORT).show();
                             }
                         }
 
@@ -76,5 +109,6 @@ import com.google.firebase.database.ValueEventListener;
                 }
             });
         }
+
     }
 
