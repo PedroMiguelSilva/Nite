@@ -39,6 +39,7 @@ public class Home extends AppCompatActivity
     RecyclerView.LayoutManager layoutManager;
 
     FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter;
+    private String TOOLBAR_TITLE = "Menu";
 
     private void loadMenu() {
 
@@ -48,26 +49,17 @@ public class Home extends AppCompatActivity
                 viewHolder.txtMenuName.setText(model.getName());
                 Picasso.with(getBaseContext()).load(model.getImage())
                         .into(viewHolder.imageView);
-                final Category clickItem = model;
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(Home.this, ""+clickItem.getName(), Toast.LENGTH_SHORT).show();
-
-                        //get category id
                         Intent eventList = new Intent(Home.this,GenreList.class);
-
                         eventList.putExtra("categoryId",adapter.getRef(position).getKey());
                         startActivity(eventList);
                     }
                 });
             }
         };
-
         recyclerView.setAdapter(adapter);
-
-        /* TODO Adicionar o id escolhido à intent para poder saber que eventos carregar na proxima pagina*/
-        Intent genreList = new Intent(Home.this, GenreList.class);
     }
 
     @Override
@@ -76,14 +68,11 @@ public class Home extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Menu");
+        toolbar.setTitle(TOOLBAR_TITLE);
         setSupportActionBar(toolbar);
 
-        //init firebase
         database = FirebaseDatabase.getInstance();
         category = database.getReference("Category");
-
-
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -94,7 +83,6 @@ public class Home extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //set name for user
         View headerView = navigationView.getHeaderView(0);
         txtFullName = headerView.findViewById(R.id.txtFullName);
         txtFullName.setText(Session.currentUser.getUserName());
@@ -110,10 +98,6 @@ public class Home extends AppCompatActivity
         loadMenu();
     }
 
-    // SILVA IMPORTANTE AQUI ->
-
-
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -126,7 +110,6 @@ public class Home extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
         return true;
     }
@@ -146,12 +129,9 @@ public class Home extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-
-    //DEPENDENDO DA TECLA PRESSIONADA ABRE UMA DETERMINADA PAGINA
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.myprofile) {
@@ -160,21 +140,17 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.favs) {
             Intent intent = new Intent(this, Favs.class);
             startActivity(intent);
-
         } else if (id == R.id.settings) {
             Intent intent = new Intent(this, Settings.class);
             startActivity(intent);
-
         } else if (id == R.id.historic) {
             Intent intent = new Intent(this, Historic.class);
             startActivity(intent);
-
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
         }
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

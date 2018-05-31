@@ -15,21 +15,21 @@ public class EditProfile extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.   activity_edit_profile);
-        face = (ImageView) findViewById(R.id.face);
+        face = findViewById(R.id.face);
 
-        description = (TextView) findViewById(R.id.description);
+        description = findViewById(R.id.description);
 
-        email = (TextView) findViewById(R.id.email);
+        email = findViewById(R.id.email);
 
-        username = (TextView) findViewById(R.id.username);
+        username = findViewById(R.id.username);
 
-        btnEditUser = (Button) findViewById(R.id.btnEditUser);
+        btnEditUser = findViewById(R.id.btnEditUser);
 
-        btnEditDes = (Button) findViewById(R.id.btnEditDes);
+        btnEditDes = findViewById(R.id.btnEditDes);
 
-        btnEditEmail = (Button) findViewById(R.id.btnEditEmail);
+        btnEditEmail = findViewById(R.id.btnEditEmail);
 
-        btnEditPhoto = (Button) findViewById(R.id.btnEditPhoto);
+        btnEditPhoto = findViewById(R.id.btnEditPhoto);
     }
 
 }

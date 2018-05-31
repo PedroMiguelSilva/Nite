@@ -21,19 +21,13 @@ public class GenreViewHolder extends RecyclerView.ViewHolder implements View.OnC
 
     public GenreViewHolder(View itemView) {
         super(itemView);
-
         txtGenreName = itemView.findViewById(R.id.genre_name);
         imageView =  itemView.findViewById(R.id.genre_image);
-
         itemView.setOnClickListener(this);
-
-
     }
 
     @Override
     public void onClick(View view) {
         itemClickListener.onClick(view,getAdapterPosition(), false);
-
-
     }
 }

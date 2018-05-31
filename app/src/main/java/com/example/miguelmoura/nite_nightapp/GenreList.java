@@ -33,17 +33,14 @@ public class GenreList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_genre_list);
 
-        //firebase
         database = FirebaseDatabase.getInstance();
         eventList = database.getReference(TABLE_EVENT_NAME);
-
 
         recyclerView = findViewById(R.id.recycler_genre);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        //get intent
         if(getIntent() != null)
             categoryId = getIntent().getStringExtra("categoryId");
         if(!categoryId.isEmpty()) {
