@@ -41,6 +41,9 @@
             android:name=".Help"
             android:label="Help" />
         <activity
+            android:name=".Privacy"
+            android:label="Privacy" />
+        <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme"

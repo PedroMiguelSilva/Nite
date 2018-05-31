@@ -21,6 +21,11 @@
 
     Sim ás grandes noites!\n\n
     Agora ja sabes onde ir.</string>
+    <string name="Privacy">
+        Os teus dados são mantidos em segurança pela equipa Nite. \n \n
+        A tua localização e informação que decidires partilhar connosco estará sempre privada. \n\n
+        Podes sempre apagar a tua conta
+    </string>
 
 
 </resources>

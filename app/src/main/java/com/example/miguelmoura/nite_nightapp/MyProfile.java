@@ -11,8 +11,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class MyProfile  extends Activity {
-    TextView description, email;
+    TextView description, email, name;
     ImageView photo;
     Button edit;
 
@@ -21,13 +23,14 @@ public class MyProfile  extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
 
+        name = (TextView) findViewById(R.id.name);
+
         photo = (ImageView) findViewById(R.id.photo);
 
         description = (TextView) findViewById(R.id.description);
 
         email = (TextView) findViewById(R.id.email);
-
-
+        
         edit = (Button) findViewById(R.id.edit);
 
         edit.setOnClickListener(new View.OnClickListener() {

@@ -59,7 +59,7 @@ public class Settings extends Activity {
         btnEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Settings.this, Home.class);
+                Intent intent = new Intent(Settings.this, EditProfile.class);
                 startActivity(intent);
 
 
@@ -68,7 +68,7 @@ public class Settings extends Activity {
         btnPrivacy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Settings.this, Home.class);
+                Intent intent = new Intent(Settings.this, Privacy.class);
                 startActivity(intent);
 
 

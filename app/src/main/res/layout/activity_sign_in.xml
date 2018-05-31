@@ -18,7 +18,7 @@
         android:inputType="textPersonName"
         android:text="Password"
         android:textColor="@android:color/white"
-        android:textStyle="bold" />
+        android:textStyle="normal" />
 
     <LinearLayout
 
@@ -62,21 +62,21 @@
         android:inputType="textPersonName"
         android:text="Email"
         android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
+        android:textColor="@android:color/white" />
 
     <Button
 
         android:id="@+id/btnSignIn"
-        android:layout_width="63dp"
+        android:layout_width="214dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="19dp"
         android:layout_weight="1"
+        android:background="@color/overlay_background"
         android:shadowColor="@android:color/black"
         android:text="SignUp"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
        <!-- app:buttonColor="@color/fbutton_color_pumpkin"
         app:cornerRadius="4dp"
         app:shadowEnabled="true"
