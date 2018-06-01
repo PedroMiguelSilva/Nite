@@ -52,7 +52,7 @@ public class GenreList extends AppCompatActivity {
 
     private void loadListEvent(String categoryId) {
 
-        Query query = eventList.orderByChild("categoryId").equalTo(categoryId).orderByChild("isFinished").equalTo("false");
+        Query query = eventList.orderByChild("categoryId").equalTo(categoryId);
 
         adapter = new FirebaseRecyclerAdapter<Event, GenreViewHolder>(Event.class,R.layout.genre_item,GenreViewHolder.class,query) {
             @Override
