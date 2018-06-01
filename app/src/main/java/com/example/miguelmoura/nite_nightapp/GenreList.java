@@ -13,6 +13,7 @@ import com.example.miguelmoura.nite_nightapp.ViewHolder.GenreViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.squareup.picasso.Picasso;
 
 public class GenreList extends AppCompatActivity {
@@ -46,10 +47,14 @@ public class GenreList extends AppCompatActivity {
         if(!categoryId.isEmpty()) {
             loadListEvent(categoryId);
         }
+
     }
 
     private void loadListEvent(String categoryId) {
-        adapter = new FirebaseRecyclerAdapter<Event, GenreViewHolder>(Event.class,R.layout.genre_item,GenreViewHolder.class,eventList.orderByChild("categoryId").equalTo(categoryId)) {
+
+        Query query = eventList.orderByChild("categoryId").equalTo(categoryId).orderByChild("isFinished").equalTo("false");
+
+        adapter = new FirebaseRecyclerAdapter<Event, GenreViewHolder>(Event.class,R.layout.genre_item,GenreViewHolder.class,query) {
             @Override
             protected void populateViewHolder(GenreViewHolder viewHolder, Event model, int position) {
                 viewHolder.txtGenreName.setText(model.getName());
@@ -65,6 +70,8 @@ public class GenreList extends AppCompatActivity {
                 });
             }
         };
+
+        eventList.orderByChild("isFinished").equalTo("false");
         recyclerView.setAdapter(adapter);
     }
 }
