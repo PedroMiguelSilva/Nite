@@ -52,8 +52,8 @@
 
     <TextView
         android:id="@+id/email"
-        android:layout_width="371dp"
-        android:layout_height="34dp"
+        android:layout_width="363dp"
+        android:layout_height="33dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="144dp"
         android:background="@color/overlay_background"

@@ -17,9 +17,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-    public class SignUp extends Activity {
+import java.util.concurrent.TimeUnit;
+
+public class SignUp extends Activity {
         private EditText email, userName, password, phoneNumber, birthYear;
         private Button btnSignUp;
+        private User user;
 
         /* Start connection with data base */
         private final String TABLE_USER_NAME    = "User";
@@ -29,15 +32,18 @@ import com.google.firebase.database.ValueEventListener;
         private final DatabaseReference table_user      = database.getReference(TABLE_USER_NAME);
         private final DatabaseReference table_email = database.getReference(TABLE_EMAIL_NAME);
 
-        private boolean isEmailUnique = false;
+        private static boolean isEmailUnique = true;
 
         private void updateEmailUnique(){
+
             table_email.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    if(!dataSnapshot.child(email.getText().toString()).exists()){
+                    if(!dataSnapshot.child(user.getEmail()).exists()){
                         isEmailUnique = true;
                     }
+                    else
+                        isEmailUnique = false;
                 }
 
                 @Override
@@ -74,30 +80,35 @@ import com.google.firebase.database.ValueEventListener;
                     table_user.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            User user = new User(userName.getText().toString(), email.getText().toString(), phoneNumber.getText().toString(), birthYear.getText().toString(), password.getText().toString());
+                            user = new User(userName.getText().toString(), email.getText().toString(), phoneNumber.getText().toString(), birthYear.getText().toString(), password.getText().toString());
                             user.formatEmail();
                             updateEmailUnique();
 
-                            /* Already exists a user */
-                            if(dataSnapshot.child(user.getUserName()).exists()){
-                                Toast.makeText(SignUp.this,"Username already in use", Toast.LENGTH_SHORT).show();
-                                mDialog.dismiss();
-                            }
-                            /* Check if email is unique */
-                            else if(isEmailUnique){
-                                mDialog.dismiss();
-
-                                table_user.child(user.getUserName()).setValue(user);
-                                table_email.child(user.getEmail()).setValue(new User(user.getUserName()));
-                                Intent homeIntent = new Intent(SignUp.this,Home.class);
-                                Session.currentUser = user;
-                                startActivity(homeIntent);
-                                finish();
+                            String answer = user.isValid();
+                            mDialog.dismiss();
+                            if(answer != "validUser"){
+                                Toast.makeText(SignUp.this,"Error: Invalid " + answer, Toast.LENGTH_SHORT).show();
                             }
                             else{
-                                mDialog.dismiss();
-                                Toast.makeText(SignUp.this,"Email already in use", Toast.LENGTH_SHORT).show();
+                                /* Already exists a user */
+                                if(dataSnapshot.child(user.getUserName()).exists()){
+                                    Toast.makeText(SignUp.this,"Username already in use", Toast.LENGTH_SHORT).show();
+                                }
+                                /* Check if email is unique */
+                                else if(isEmailUnique){
+
+                                    table_user.child(user.getUserName()).setValue(user);
+                                    table_email.child(user.getEmail()).setValue(new User(user.getUserName()));
+                                    Intent homeIntent = new Intent(SignUp.this,Home.class);
+                                    Session.currentUser = user;
+                                    startActivity(homeIntent);
+                                    finish();
+                                }
+                                else{
+                                    Toast.makeText(SignUp.this,"Email already in use", Toast.LENGTH_SHORT).show();
+                                }
                             }
+
                         }
 
                         @Override

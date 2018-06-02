@@ -34,8 +34,15 @@ public class User {
      */
     private String password;
 
+    private final String DOT_SUBSTITUTE_STRING = "TERMINATIONDOT";
+
+    public String getDOT_SUBSTITUTE_STRING() {
+        return DOT_SUBSTITUTE_STRING;
+    }
+
     /**
      * Constructor of User
+
      * @param userName
      *          Unique user name of the User
      * @param email
@@ -53,6 +60,7 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.birthYear = birthYear;
         this.password = password;
+        unformatEmail();
     }
 
     /**
@@ -111,10 +119,85 @@ public class User {
     }
 
     public void formatEmail(){
-        this.email = email.replace(".","TERMINATIONDOT");
+        this.email = email.replace(".",DOT_SUBSTITUTE_STRING);
     }
 
     public void unformatEmail(){
-        this.email = email.replace("TERMINATIONDOT",".");
+        this.email = email.replace(DOT_SUBSTITUTE_STRING,".");
+    }
+
+    private String isEmailValid(){
+        int indexOfAt = email.indexOf("@");
+        int indexOfDot = email.indexOf(DOT_SUBSTITUTE_STRING);
+
+        if(getEmail().length() < 8)
+            return "Email too short";
+        if(getEmail().length() > 100)
+            return "Email too long";
+
+        if(indexOfAt == -1)
+            return "Email missing \"@\"";
+        if(indexOfDot == -1)
+            return "Email missing \".\"";
+
+        if(indexOfAt > indexOfDot)
+            return "Email \"@\" must be before \".\"";
+
+        return "valid";
+    }
+
+    private String isBirthYearValid(){
+
+        int bYear;
+        try{
+            bYear = Integer.parseInt(getBirthYear());
+        }
+        catch (NumberFormatException e){
+            return "Birth year must be a number";
+        }
+
+        if(bYear < 1990)
+            return "Birth Date must be greater than 1990";
+        if(bYear > 2001)
+            return "Birth Date must be less than 2001";
+        else return "valid";
+    }
+
+    private String isPasswordValid(){
+        if(getPassword().length() <= 8)
+            return "Password too short";
+        if(getPassword().length() >= 36)
+            return "Password too long";
+        else
+            return "valid";
+    }
+
+    public String isValid(){
+        String answer;
+        if((answer = isEmailValid()) != "valid")
+            return answer;
+        if((answer = isPhoneNumberValid()) != "valid")
+            return answer;
+        if((answer = isBirthYearValid()) != "valid")
+            return answer;
+        if((answer = isPasswordValid()) != "valid")
+            return answer;
+        return "validUser";
+    }
+
+    private String isPhoneNumberValid() {
+        int number;
+        try{
+            number = Integer.parseInt(getPhoneNumber());
+        }
+        catch (NumberFormatException e){
+            return "Phone number must be a number";
+        }
+        if(number > 990000000)
+            return "Phone number must be less than 990000000";
+        if(number < 900000000)
+            return "Phone number must be greater than 900000000";
+        else
+            return "valid";
     }
 }

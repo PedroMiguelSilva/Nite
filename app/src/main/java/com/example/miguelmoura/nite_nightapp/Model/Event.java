@@ -19,13 +19,15 @@ public class Event {
     private String year;
     private String isFinished;
 
-    private Date startDate;
-
-    public Event() {
+    public String getIsFinished() {
+        return isFinished;
     }
 
-    @SuppressWarnings("deprecation")
-    public Event(String categoryId, String clubId, String contact, String day, String description, String endHour, String image, String month, String name, String startHour, String year, String isFinished, Date startDate) {
+    public Event() {
+
+    }
+
+    public Event(String categoryId, String clubId, String contact, String day, String description, String endHour, String image, String month, String name, String startHour, String year) {
         this.categoryId = categoryId;
         this.clubId = clubId;
         this.contact = contact;
@@ -38,13 +40,8 @@ public class Event {
         this.startHour = startHour;
         this.year = year;
         this.isFinished = isFinished;
-        this.startDate = startDate;
 
-        startDate = new Date(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
-    }
-
-    public Date getStartDate() {
-        return startDate;
+        isEventOver();
     }
 
     public String getCategoryId() {
@@ -89,5 +86,15 @@ public class Event {
 
     public String getYear() {
         return year;
+    }
+
+    @SuppressWarnings("deprecation")
+    void isEventOver(){
+        Date currentTime = new Date();
+        Date eventStart = new Date(Integer.parseInt(getYear()),Integer.parseInt(getMonth()),Integer.parseInt(getDay()));
+        if(currentTime.before(eventStart))
+            isFinished = "true";
+        else
+            isFinished = "false";
     }
 }

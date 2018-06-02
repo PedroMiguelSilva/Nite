@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.miguelmoura.nite_nightapp">
-    
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -36,9 +34,6 @@
         <activity
             android:name=".Favs"
             android:label="Favs" />
-        <activity
-            android:name=".GPSUpdate"
-            android:label="GPSUpdate" />
         <activity
             android:name=".EditProfile"
             android:label="EditProfile" />
