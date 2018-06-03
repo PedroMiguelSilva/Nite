@@ -1,3 +1,7 @@
+SETUP/INSTALATION
+-----
+
+
 UPDATED UML DIAGRAM
 -----
 ![UML](https://github.com/PedroMiguelSilva/Nite/blob/master/ClassDiagram.PNG)
@@ -61,3 +65,6 @@ Miguel Barraca Moura (50%)
 User Interface
 Implementação do gps
 
+USER MANUAL
+-----
+TODO: Barraca
