@@ -152,7 +152,10 @@ public class Home extends AppCompatActivity
         } else if (id == R.id.historic) {
             Intent intent = new Intent(this, Historic.class);
             startActivity(intent);
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.location) {
+            Intent intent = new Intent(this, GPSUpdate.class);
+            startActivity(intent);
+
 
         } else if (id == R.id.nav_send) {
 

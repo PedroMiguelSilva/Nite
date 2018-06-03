@@ -12,9 +12,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+
 public class GPSUpdate extends AppCompatActivity {
     TextView textView;
     Button btnUpdateGps;
+    //private Haversine have;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,7 +35,9 @@ public class GPSUpdate extends AppCompatActivity {
                 if(l != null){
                     double lat = l.getLatitude();
                     double lon = l.getLongitude();
-                    Toast.makeText(getApplicationContext(), "Lat" + lat + "\nLon" + lon, Toast.LENGTH_LONG).show();
+                    if(Haversine.distance(lat, lon, Haversine.getPortoLat(), Haversine.getPortoLon()) < 30 )
+                        Toast.makeText(getApplicationContext(), "Lat" + lat + "\nLon" + lon +"\nEncontra-se na cidade: Porto", Toast.LENGTH_LONG).show();
+                    else Toast.makeText(getApplicationContext(), "Lat" + lat + "\nLon" + lon +"\nDe momento so estamos a operar no Porto. Pedimos desculpa", Toast.LENGTH_LONG).show();
                 }
             }
         });
