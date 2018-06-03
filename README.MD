@@ -1,5 +1,20 @@
 SETUP/INSTALATION
 -----
+Correr para testar a App:
+1. Abrir Android Studio e abrir o projeto
+2. Compilar a app (se necessário também o build.gradel)
+3. Ligar um telemovel com USB debugging ligado
+4. Correr a App usando "Run" (Seta verde)
+5. Selecionar o dispositivo indicado
+(Em alternativa pode criar um "Virtual Device" mas não faz parte da instalação base do AndroidStudio)
+[Ajuda](https://developer.android.com/training/basics/firstapp/running-app)
+
+Gerar o Apk:
+1. Menu -> Build
+2. Build -> Build APK(s)
+3. Transferir o ficheiro para um telemóvel
+4. Instalar a aplicação
+[Ajuda](https://developer.android.com/studio/run/)
 
 
 UPDATED UML DIAGRAM
