@@ -1,5 +1,6 @@
 package com.example.miguelmoura.nite_nightapp.Session;
 
+
 import com.example.miguelmoura.nite_nightapp.Model.User;
 
 public class Session {

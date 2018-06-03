@@ -1,5 +1,6 @@
 package com.example.miguelmoura.nite_nightapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -65,7 +66,9 @@ public class GenreList extends AppCompatActivity {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-                        Toast.makeText(GenreList.this, ""+local.getName(), Toast.LENGTH_SHORT).show();
+                        Intent eventInfo = new Intent(GenreList.this,EventPage.class);
+                        eventInfo.putExtra("eventId",adapter.getRef(position).getKey());
+                        startActivity(eventInfo);
                     }
                 });
             }

@@ -137,7 +137,7 @@ public class Event {
         return contact;
     }
 
-    private String getDay() {
+    public String getDay() {
         return day;
     }
 
@@ -153,7 +153,7 @@ public class Event {
         return image;
     }
 
-    private String getMonth() {
+    public String getMonth() {
         return month;
     }
 
@@ -165,8 +165,16 @@ public class Event {
         return startHour;
     }
 
-    private String getYear() {
+    public String getYear() {
         return year;
+    }
+
+    public String getDate(){
+        return getDay() + "/" + getMonth() + "/" + getYear();
+    }
+
+    public String getTime(){
+        return getStartHour() + "h - " + getEndHour() + "h";
     }
 
     /**

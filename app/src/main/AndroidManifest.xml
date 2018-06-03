@@ -36,6 +36,9 @@
             android:name=".Favs"
             android:label="Favs" />
         <activity
+            android:name=".EventPage"
+            android:label="EventPage" />
+        <activity
             android:name=".EditProfile"
             android:label="EditProfile" />
         <activity

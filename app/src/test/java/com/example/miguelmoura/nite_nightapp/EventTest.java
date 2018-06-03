@@ -20,4 +20,11 @@ public class EventTest {
         Event event = new Event("1","1","23","21","desc","endhor","image","2","dsa","star","2030");
         assertEquals("true",event.getIsFinished());
     }
+
+    @Test
+    public void test_dataParse(){
+        Event event = new Event("1","1","23","21","desc","endhor","image","2","dsa","star","2030");
+        String date = event.getDate();
+        assertEquals("21/2/2030",date);
+    }
 }
