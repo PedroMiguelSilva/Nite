@@ -65,7 +65,7 @@ public class EventPage extends Activity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                eventChosen = dataSnapshot.getValue(Event.class);//h
+                eventChosen = dataSnapshot.getValue(Event.class);
                 description.setText(eventChosen.getDescription());
                 date.setText(eventChosen.getDate());
                 horario.setText(eventChosen.getTime());

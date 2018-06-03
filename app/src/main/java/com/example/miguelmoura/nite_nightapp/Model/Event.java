@@ -7,6 +7,7 @@ import java.util.Date;
 /**
  * Represents an Event/Party that has happened or will happen
  */
+@SuppressWarnings("WeakerAccess")
 public class Event {
 
     /**
@@ -118,6 +119,10 @@ public class Event {
         isEventOver();
     }
 
+    /**
+     * Returns the Id of the Category
+     * @return Id of the Category
+     */
     public String getCategoryId() {
         return categoryId;
     }
@@ -128,51 +133,90 @@ public class Event {
     public Event() {
     }
 
-    public String getClubId() {
-        return clubId;
-
-    }
-
+    /**
+     * Return the String with the Contacts for the Event
+     * @return Contacts for the Event
+     */
     public String getContact() {
         return contact;
     }
 
+    /**
+     * Returns a String with the Day of the Event
+     * @return Day of the Event
+     */
     public String getDay() {
         return day;
     }
 
+    /**
+     * Returns a String with the description of the Event
+     * @return Description of the Event
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Returns a String with the End hour of the Event
+     * @return End hour of the Event
+     */
     public String getEndHour() {
         return endHour;
     }
 
+    /**
+     * Returns a String with the URL of the image associated with the Event
+     * @return Image of the Event
+     */
     public String getImage() {
         return image;
     }
 
+    /**
+     * Returns a String with the month of the Event
+     * @return Month of the Event
+     */
     public String getMonth() {
         return month;
     }
 
+    /**
+     * Returns a String with the Name of the Event
+     * @return Name of the Event
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Return a String with the Start hour of the Event
+     * @return Start hour of the Event
+     */
     public String getStartHour() {
         return startHour;
     }
 
+    /**
+     * Return a String with the Year of the Event
+     * @return Year of the Event
+     */
     public String getYear() {
         return year;
     }
 
+    /**
+     * Return a String with the Date formated as DD/MM/YYYY
+     * @return Date as DD/MM/YYYY
+     */
     public String getDate(){
         return getDay() + "/" + getMonth() + "/" + getYear();
     }
 
+    /**
+     * Returns the interval of the Event
+     * @return Interval of the Event in "(startHour)h - (endHour)h"
+     */
     public String getTime(){
         return getStartHour() + "h - " + getEndHour() + "h";
     }
