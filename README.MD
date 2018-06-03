@@ -53,11 +53,11 @@ Miguel Barraca Moura
 
 WORK DISTRIBUTION
 -----
-Pedro Miguel Silva
+Pedro Miguel Silva (50%)
 Implementação do sistema de dados
 Lógica, testes unitários e documentação
 
-Miguel Barraca Moura
+Miguel Barraca Moura (50%)
 User Interface
 Implementação do gps
 
