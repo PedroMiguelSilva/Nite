@@ -20,7 +20,7 @@ MAQUINA DE ESTADOS SIMPLES:
 
 
 UML:
-![UML](https://github.com/PedroMiguelSilva/Nite/blob/master/ClassDiagram.png)
+![UML](https://github.com/PedroMiguelSilva/Nite/blob/master/ClassDiagram.PNG)
 
 
 ![StateMachine1](https://github.com/PedroMiguelSilva/Nite/blob/master/FInal.png)
