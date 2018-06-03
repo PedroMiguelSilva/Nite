@@ -34,7 +34,7 @@ public class User {
      */
     private String password;
 
-    private final String DOT_SUBSTITUTE_STRING = "TERMINATIONDOT";
+    private String DOT_SUBSTITUTE_STRING = "TERMINATIONDOT";
 
     public String getDOT_SUBSTITUTE_STRING() {
         return DOT_SUBSTITUTE_STRING;
@@ -60,7 +60,8 @@ public class User {
         this.phoneNumber = phoneNumber;
         this.birthYear = birthYear;
         this.password = password;
-        unformatEmail();
+
+        DOT_SUBSTITUTE_STRING = "TERMINATIONDOT";
     }
 
     /**
@@ -76,6 +77,7 @@ public class User {
      */
     public User(String email) {
         this.email = email;
+        DOT_SUBSTITUTE_STRING = "TERMINATIONDOT";
     }
 
     /**
@@ -98,7 +100,7 @@ public class User {
      * Returns the phone number of the User
      * @return Phone number of the User
      */
-    public String getPhoneNumber() {
+    private String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -106,7 +108,7 @@ public class User {
      * Returns the year of birth of the User
      * @return Year of Birth of User
      */
-    public String getBirthYear() {
+    private String getBirthYear() {
         return birthYear;
     }
 
@@ -118,14 +120,24 @@ public class User {
         return password;
     }
 
+    /**
+     * Formats the Email of the User to be accepted as a FireBase Real-time Database key
+     */
     public void formatEmail(){
         this.email = email.replace(".",DOT_SUBSTITUTE_STRING);
     }
 
+    /**
+     * Unformats the Email of the User for display purposes
+     */
     public void unformatEmail(){
         this.email = email.replace(DOT_SUBSTITUTE_STRING,".");
     }
 
+    /**
+     * Checks if an Email is Valid and returns a String accordingly
+     * @return String with the message of Error or the String "valid" if valid
+     */
     private String isEmailValid(){
         int indexOfAt = email.indexOf("@");
         int indexOfDot = email.indexOf(DOT_SUBSTITUTE_STRING);
@@ -146,6 +158,10 @@ public class User {
         return "valid";
     }
 
+    /**
+     * Checks if the birth year is valid
+     * @return String with the message of Error or the String "valid" if valid
+     */
     private String isBirthYearValid(){
 
         int bYear;
@@ -163,6 +179,10 @@ public class User {
         else return "valid";
     }
 
+    /**
+     * Checks if the password is valid
+     * @return String with the message of Error or the String "valid" if valid
+     */
     private String isPasswordValid(){
         if(getPassword().length() <= 8)
             return "Password too short";
@@ -172,19 +192,27 @@ public class User {
             return "valid";
     }
 
+    /**
+     * Checks if the Information of the User is valid in order to accept it as a new User
+     * @return "validUser" if the Information is valid, Error String otherwise
+     */
     public String isValid(){
         String answer;
-        if((answer = isEmailValid()) != "valid")
+        if(!(answer = isEmailValid()).equals("valid"))
             return answer;
-        if((answer = isPhoneNumberValid()) != "valid")
+        if(!(answer = isPhoneNumberValid()).equals("valid"))
             return answer;
-        if((answer = isBirthYearValid()) != "valid")
+        if(!(answer = isBirthYearValid()).equals("valid"))
             return answer;
-        if((answer = isPasswordValid()) != "valid")
+        if(!(answer = isPasswordValid()).equals("valid"))
             return answer;
         return "validUser";
     }
 
+    /**
+     * Checks if the Phone Number is valid
+     * @return String with the message of Error or the String "valid" if valid
+     */
     private String isPhoneNumberValid() {
         int number;
         try{

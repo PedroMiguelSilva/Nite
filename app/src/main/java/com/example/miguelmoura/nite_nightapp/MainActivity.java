@@ -21,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnSignIn = (Button) findViewById(R.id.btnSignIn);
+        btnSignIn =  findViewById(R.id.btnSignIn);
 
-        btnSignUp = (Button) findViewById(R.id.btnSignUp);
+        btnSignUp =  findViewById(R.id.btnSignUp);
 
-        txtSlogan = (TextView) findViewById(R.id.txtSlogan);
+        txtSlogan =  findViewById(R.id.txtSlogan);
 
         Typeface face = Typeface.createFromAsset(getAssets(),"fonts/NABILA.TTF");
 
