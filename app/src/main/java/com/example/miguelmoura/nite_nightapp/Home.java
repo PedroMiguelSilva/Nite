@@ -34,12 +34,14 @@ public class Home extends AppCompatActivity
     DatabaseReference category;
 
     TextView txtFullName;
+    TextView txtEmail;
 
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
 
     FirebaseRecyclerAdapter<Category,MenuViewHolder> adapter;
-    private String TOOLBAR_TITLE = "Menu";
+    private final String TOOLBAR_TITLE = "Menu";
+    private final String TABLE_CATEGORY_NAME = "Category";
 
     private void loadMenu() {
 
@@ -72,7 +74,7 @@ public class Home extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         database = FirebaseDatabase.getInstance();
-        category = database.getReference("Category");
+        category = database.getReference(TABLE_CATEGORY_NAME);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -86,6 +88,10 @@ public class Home extends AppCompatActivity
         View headerView = navigationView.getHeaderView(0);
         txtFullName = headerView.findViewById(R.id.txtFullName);
         txtFullName.setText(Session.currentUser.getUserName());
+
+        txtEmail = headerView.findViewById(R.id.email);
+        Session.currentUser.unformatEmail();
+        txtEmail.setText(Session.currentUser.getEmail());
 
         recyclerView = findViewById(R.id.recycler_menu);
         recyclerView.setHasFixedSize(true);

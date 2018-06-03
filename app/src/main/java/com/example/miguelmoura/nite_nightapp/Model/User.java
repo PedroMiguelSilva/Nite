@@ -172,8 +172,8 @@ public class User {
             return "Birth year must be a number";
         }
 
-        if(bYear < 1990)
-            return "Birth Date must be greater than 1990";
+        if(bYear < 1900)
+            return "Birth Date must be greater than 1900";
         if(bYear > 2001)
             return "Birth Date must be less than 2001";
         else return "valid";
@@ -221,8 +221,8 @@ public class User {
         catch (NumberFormatException e){
             return "Phone number must be a number";
         }
-        if(number > 990000000)
-            return "Phone number must be less than 990000000";
+        if(number > 999999999)
+            return "Phone number must be less than 999999999";
         if(number < 900000000)
             return "Phone number must be greater than 900000000";
         else
