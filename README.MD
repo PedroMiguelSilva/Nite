@@ -80,7 +80,41 @@ Lógica, testes unitários e documentação
 Miguel Barraca Moura (50%)<br>
 User Interface<br>
 Implementação do gps
+User Manual
 
 USER MANUAL
 -----
-TODO:
+Pagina Inicial :
+![First](https://github.com/PedroMiguelSilva/Nite/blob/finalRelease/tutorial/1.png)
+
+Sign-Up na aplicação:
+![SignUp](https://github.com/PedroMiguelSilva/Nite/blob/finalRelease/tutorial/signup.png)
+
+Sign-Up feito:
+![SignUpDone](https://github.com/PedroMiguelSilva/Nite/blob/finalRelease/tutorial/signupDone.png)
+
+Entramos agora no main menu:
+![MainMenu](https://github.com/PedroMiguelSilva/Nite/blob/finalRelease/tutorial/mainMenu.png)
+
+Podemos abrir a Home drawer:
+![HomeDrawer](https://github.com/PedroMiguelSilva/Nite/blob/finalRelease/tutorial/HomeDrawer.png)
+
+Exemplo de uma das aplicaçoes da drawer, a parte da ajuda:
+![Help](https://github.com/PedroMiguelSilva/Nite/blob/finalRelease/tutorial/Help.png)
+
+Podemos tambem abrir a atualização da localização via GPS:
+![City](https://github.com/PedroMiguelSilva/Nite/blob/finalRelease/tutorial/city.png)
+NOTA: mostra aqueles valores no computador uma vez que o serviço só funciona em android. Nos testes no dispositivo apresentava coordenadas corretas.
+
+De volta ao menu, podemos escolher uma das categorias de noite:
+![Events](https://github.com/PedroMiguelSilva/Nite/blob/finalRelease/tutorial/Events.png)
+
+E finalmente abrir um dos eventos para ver os detalhes:
+![eventPage](https://github.com/PedroMiguelSilva/Nite/blob/finalRelease/tutorial/eventPage.png)
+
+Por fim depois de escolhido o evento é possivel sair e entrar via sign in com os mesmos dados ou ate apagar a conta.
+
+
+
+
+
