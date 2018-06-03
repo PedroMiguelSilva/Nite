@@ -68,6 +68,7 @@ Pedro Miguel Silva
 60 horas
 
 Miguel Barraca Moura
+60 horas
 
 
 WORK DISTRIBUTION
@@ -82,4 +83,4 @@ Implementação do gps
 
 USER MANUAL
 -----
-TODO: Barraca
+TODO:
