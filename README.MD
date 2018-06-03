@@ -7,14 +7,14 @@ Correr para testar a App:
 4. Correr a App usando "Run" (Seta verde)
 5. Selecionar o dispositivo indicado
 (Em alternativa pode criar um "Virtual Device" mas não faz parte da instalação base do AndroidStudio)
-[Ajuda](https://developer.android.com/training/basics/firstapp/running-app)
+<br>[Ajuda](https://developer.android.com/training/basics/firstapp/running-app)
 
 Gerar o Apk:
 1. Menu -> Build
 2. Build -> Build APK(s)
 3. Transferir o ficheiro para um telemóvel
 4. Instalar a aplicação
-[Ajuda](https://developer.android.com/studio/run/)
+<br>[Ajuda](https://developer.android.com/studio/run/)
 
 
 UPDATED UML DIAGRAM
@@ -72,11 +72,11 @@ Miguel Barraca Moura
 
 WORK DISTRIBUTION
 -----
-Pedro Miguel Silva (50%)
+Pedro Miguel Silva (50%)<br>
 Implementação do sistema de dados
 Lógica, testes unitários e documentação
 
-Miguel Barraca Moura (50%)
+Miguel Barraca Moura (50%)<br>
 User Interface
 Implementação do gps
 
