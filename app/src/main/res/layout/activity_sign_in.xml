@@ -15,8 +15,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="121dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Password"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:textColorHint="@android:color/white"
         android:textColor="@android:color/white"
         android:textStyle="normal" />
 
@@ -26,7 +27,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_centerInParent="true"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -60,7 +60,8 @@
         android:layout_marginBottom="211dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Email"
+        android:hint="Username"
+        android:textColorHint="@android:color/white"
         android:textAllCaps="false"
         android:textColor="@android:color/white" />
 

@@ -11,12 +11,14 @@
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/age"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="142dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Password"
+        android:hint="Password"
+        android:inputType="textPassword"
         android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
         android:textStyle="normal" />
 
     <EditText
@@ -27,7 +29,8 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Telemovel"
+        android:hint="Telemovel"
+        android:textColorHint="@android:color/white"
         android:textColor="@android:color/white"
         android:textStyle="normal" />
 
@@ -39,7 +42,8 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Email"
+        android:hint="Email "
+        android:textColorHint="@android:color/white"
         android:textColor="@android:color/white"
         android:textStyle="normal" />
 
@@ -51,7 +55,8 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Age"
+        android:hint="Ano de Nascimento "
+        android:textColorHint="@android:color/white"
         android:textColor="@android:color/white"
         android:textStyle="normal" />
 
@@ -96,7 +101,8 @@
         android:layout_marginTop="203dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Username"
+        android:textColorHint="@android:color/white"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textStyle="normal" />
